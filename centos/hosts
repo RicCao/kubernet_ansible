@@ -1,0 +1,17 @@
+[kubernetes_master_nodes]
+kubernetes-master ansible_host=10.1.18.25
+
+[kubernetes_worker_nodes]
+kubernetes-worker1 ansible_host=10.1.18.26
+kubernetes-worker2 ansible_host=10.1.18.27
+
+
+[kubernetes:children]
+kubernetes_worker_nodes
+kubernetes_master_nodes
+
+[kubernetes:vars]
+ansible_password=Tni@123456
+ansible_ssh_user=tni
+
+
